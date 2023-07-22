@@ -39,7 +39,7 @@ const App: React.FC = () => {
         <button className="bg-blue-600 p-2 text-white rounded hover:bg-blue-500 hover:shadow transition">Search</button>
         {loading && (
           <ul>
-            {Array.from({ length: 5 }).map((idx) => <li className="animate-pulse bg-gray-300 h-6 my-1 rounded" />)}            
+            {Array.from({ length: 5 }).map(() => <li className="animate-pulse bg-gray-300 h-6 my-1 rounded" />)}            
           </ul>
         )}
 
