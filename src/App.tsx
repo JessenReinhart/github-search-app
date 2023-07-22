@@ -39,13 +39,13 @@ const App: React.FC = () => {
         <button className="bg-blue-600 p-2 text-white rounded hover:bg-blue-500 hover:shadow transition">Search</button>
         {loading && (
           <ul>
-            {Array.from({ length: 5 }).map(() => <li className="animate-pulse bg-gray-300 h-6 my-1 rounded" />)}            
+            {Array.from({ length: 5 }).map((idx) => <li className="animate-pulse bg-gray-300 h-6 my-1 rounded" />)}            
           </ul>
         )}
 
-        {error && <p>{error}</p>}
+        {error && <span className="text-red-500 text-sm bg-red-200 p-2 rounded text-center font-semibold">Error: {error}</span>}
 
-        {(!loading && !error && displayName.length > 0) && (data.length > 0 ? (
+        {(!loading && !error && displayName?.length > 0) && (data?.length > 0 ? (
           <>
             <small className="text-gray-400 text-sm">Showing results for '{displayName}'</small>
             <ul className="flex flex-col gap-2">
@@ -62,7 +62,7 @@ const App: React.FC = () => {
                       className={`h-4 w-4 opacity-40 transition ${selectedUser === item.login ? 'rotate-180' : ''}`} />
                   </li>
                   {selectedUser === item.login && (loadingDetail ? <li className="animate-pulse bg-gray-300 h-6 my-1 rounded" /> : 
-                    detail.length > 0 ? detail.map((data) => <div className="p-2 ml-2 flex flex-row bg-gray-300 justify-between">
+                    detail?.length > 0 ? detail.map((data) => <div key={data.full_name} className="p-2 ml-2 flex flex-row bg-gray-300 justify-between">
                       <div className="flex flex-col">
                         <span className="font-bold">{data.name}</span>
                         <p className='text-sm'>{data.description}</p>

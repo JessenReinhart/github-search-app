@@ -37,6 +37,7 @@ export const useGitHubAPI = (query: string) => {
 				},
 			});
 			const responseData = await response.json();
+			if (responseData.message === "Bad credentials") setError(responseData.message)
 			setData(responseData.items);
 		} catch (error) {
 			setError('Error fetching data from GitHub API');
