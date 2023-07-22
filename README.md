@@ -1,7 +1,5 @@
 # GitHub User Search App
 
-![GitHub User Search App](screenshot.png)
-
 A simple React application that allows users to search for GitHub users and view their repositories.
 
 ## Demo
