@@ -5,6 +5,9 @@ module.exports = {
   },
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  moduleNameMapper: {
+    '\\.(png)$': '<rootDir>/__mocks__/fileMock.js',
+  },
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   globals: {
